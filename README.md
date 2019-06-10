@@ -1,7 +1,7 @@
 # Simulated-Pepper-Project
 
-## Projet
-Robot qui range une chambre
+## Objectif
+Simuler un robot Pepper qui range des objets dans des boites
 
 ## Auteurs
 * Antoine REBOULLET
