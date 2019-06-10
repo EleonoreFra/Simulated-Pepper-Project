@@ -30,6 +30,8 @@ Le robot peut ensuite :
 * Le mettre dans le bon rangement
 
 ## Bonus 4 : Make a beautiful usecase
+Nous avons créé un scénario à notre simulation : le robot est chargé de ranger une chambre d'enfant. 
+Voici nos améliorations :
 * Décor de chambre
 * Rangement des 3 objets 
 * IHR adapté : l'utilisateur sélectionne les objets à ranger là où il le souhaite. Si un objet (ou rangement) a déjà été sélectionné, il est directement remplacé par un objet (ou rangement) non utilisé.
