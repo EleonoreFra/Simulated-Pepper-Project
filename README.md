@@ -33,12 +33,12 @@ Le robot peut ensuite :
 * Le mettre dans le bon rangement associé
 
 ## Bonus : 
-_1. Bonus 1_ : Contribution to python_pepper_kinematics
+1. Bonus 1 : Contribution to python_pepper_kinematics   
 Nous avons voulu réaliser un ensemble de 3 mouvements de façon successive. Pour ce faire, nous avons demandé au robot, après chaque saisie, de revenir à une position connue désignée comme origine. Cette position est aussi le point de départ et d'arrivée de tous les fonctions de rangement.
 Un bruit a été ajouté au robot par les concepteurs de qibullet afin d'améliorer son réalisme, il a été par ce fait difficile de parvenir au résultat escompté et à ce que les 3 objets soient correctement attrapés. En effet, pour le dernier totem, le bruit s'étant ajouté à chaque mouvement précédent, le robot est donc pratiquement toujours en echec.
 Ce travail nous a permis de toucher aux limites physiques du robot. Nous avons tenté, afin de palier ce problème, d'autres solutions comme la saisie à deux mains des objets mais elles se sont avérées moins efficaces.
 
-_2. Bonus 4_ : Make a beautiful usecase
+2. Bonus 4 : Make a beautiful usecase   
 Nous avons créé un scénario à notre simulation : le robot est chargé de ranger une chambre d'enfant. 
 Voici nos améliorations :
 * Décor de chambre
