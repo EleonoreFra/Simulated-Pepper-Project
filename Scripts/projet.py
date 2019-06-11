@@ -141,7 +141,7 @@ def analyse_image(client):
     img_file = "data://antoine_rb/nlp_directory/photo.png"
 
     # Upload local file CHANGER LE CHEMIN
-    client.file(img_file).putFile("/home/tp/softbankRobotics/apps/Scripts/photo.png")
+    client.file(img_file).putFile("/home/tp/softbankRobotics/apps/FRANCOIS_LECOCQ_REBOULLET_BONUS_4/Scripts/photo.png")
 
     input = {
       "image": "data://antoine_rb/nlp_directory/photo.png",
@@ -363,7 +363,7 @@ def user_request(session):
     # Get the service ALTabletService.
     try:
         tabletService = session.service("ALTabletService")
-        tabletService.loadApplication("Scripts")
+        tabletService.loadApplication("FRANCOIS_LECOCQ_REBOULLET_BONUS_4/Scripts")
         tabletService.showWebview()
 
     except Exception, e:
@@ -384,7 +384,7 @@ def user_request(session):
     	ALDialog.setLanguage("French")
 
     	# Loading the topics directly as text strings
-    	topic_name = ALDialog.loadTopic("/home/tp/softbankRobotics/apps/Scripts/dialogue_frf.top")
+    	topic_name = ALDialog.loadTopic("/home/tp/softbankRobotics/apps/FRANCOIS_LECOCQ_REBOULLET_BONUS_4/Scripts/dialogue_frf.top")
 
     	# Activating the loaded topics
     	ALDialog.activateTopic(topic_name)
