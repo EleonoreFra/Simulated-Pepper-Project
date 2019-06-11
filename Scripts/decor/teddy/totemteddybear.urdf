@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<robot name="physics">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.02" radius="0.05"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 .8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.02" radius="0.05"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.01"/>
+      <inertia ixx="0.000002" ixy="0.0" ixz="0.0" iyy="0.000002" iyz="0.0" izz="0.000002"/>
+    </inertial>
+  </link>
+
+  <link name="grasp_cylinder">
+    <visual>
+      <geometry>
+        <cylinder length="0.18" radius="0.02"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0.2 0.2 0.9 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.12" radius="0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9"/>
+    </inertial>
+  </link>
+
+  <joint name="jfixed1" type="fixed">
+    <parent link="base_link"/>
+    <child link="grasp_cylinder"/>
+    <origin xyz="0 0 0.09"/>
+  </joint>
+
+
+  <link name="top_cylinder">
+    <visual>
+      <geometry>
+        <cylinder length="0.02" radius="0.05"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 .8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.02" radius="0.05"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9"/>
+    </inertial>
+  </link>
+
+  <joint name="jfixed2" type="fixed">
+    <parent link="grasp_cylinder"/>
+    <child link="top_cylinder"/>
+    <origin xyz="0 0 0.1"/>
+  </joint>
+
+  <link name="duck_stuff">
+    <contact>
+      <lateral_friction value="1.0"/>
+      <rolling_friction value="0.0"/>
+      <contact_cfm value="0.0"/>
+      <contact_erp value="1.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="1.57 0 0" xyz="0.0 0.02 0.0"/>
+       <mass value=".001"/>
+       <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9"/>
+    </inertial>
+    <visual>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="teddy.obj" scale=".07 .07 .07"/>
+      </geometry>
+       <material name="red">
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
+      <geometry>
+	 	<mesh filename="teddy.obj" scale=".07 .07 .07"/>
+      </geometry>
+    </collision>
+  </link>
+
+    <joint name="jfixed_stuff" type="fixed">
+    <parent link="top_cylinder"/>
+    <child link="duck_stuff"/>
+    <origin rpy="0 0 0" xyz="0 0 0.01"/>
+  </joint>
+
+
+</robot>

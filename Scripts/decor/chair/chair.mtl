@@ -1,0 +1,25 @@
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl Material__99
+Ns 5.882353
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.171000 0.171000 0.171000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd 
+map_Ka
+
+newmtl Wassily_Chair_metallf
+Ns 52.941176
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.494100 0.387100 0.216900
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd 
+map_Ka 
+refl Map__182_Mask.png

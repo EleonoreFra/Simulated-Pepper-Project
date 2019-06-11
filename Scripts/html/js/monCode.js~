@@ -1,0 +1,104 @@
+﻿$(document).ready(function () {
+    session = new QiSession("127.0.0.1:8002", "1.0");
+
+    $('#page_accueil').show();
+    $('#page_objet').hide();
+    $('#page_rangement').hide();
+    $('#page_en_cours').hide();
+
+
+    session.service("ALMemory").done(function(ALMemory) {
+
+        ALMemory.subscriber("MonCode/PageAccueil").done(function(subscriber) {
+
+            subscriber.signal.connect(function() {
+                $('#page_accueil').show();
+                $('#page_objet').hide();
+                $('#page_rangement').hide();
+		$('#page_en_cours').hide();
+            });
+        });
+
+
+        ALMemory.subscriber("MonCode/PageObjet").done(function(subscriber) {
+
+            subscriber.signal.connect(function() {
+                $('#page_objet').show();
+                $('#page_accueil').hide();
+                $('#page_rangement').hide();
+		$('#page_en_cours').hide();
+            });
+        });
+
+        ALMemory.subscriber("MonCode/PageRangement").done(function(subscriber) {
+
+            subscriber.signal.connect(function() {
+                $('#page_rangement').show();
+                $('#page_accueil').hide();
+                $('#page_objet').hide();
+		$('#page_en_cours').hide();
+            });
+        });
+
+        ALMemory.subscriber("MonCode/PageEnCours").done(function(subscriber) {
+
+            subscriber.signal.connect(function() {
+                $('#page_rangement').hide();
+                $('#page_accueil').hide();
+                $('#page_objet').hide();
+		$('#page_en_cours').show();
+		
+            });
+        });
+
+    });
+
+    function raise(event, value) {
+        session.service("ALMemory").done(function(ALMemory) {
+            ALMemory.raiseEvent(event, value);
+        });
+    }
+
+	$('#start').on('click', function() {
+        console.log("click Start");
+        raise('MonCode/Start', 1)
+    });
+
+
+    $('#peluche').on('click', function() {
+        console.log("click Peluche");
+        raise('MonCode/ButtonPeluche', 1)
+    });
+
+    $('#oiseau').on('click', function() {
+        console.log("click Oiseau");
+        raise('MonCode/ButtonOiseau', 1)
+    });
+
+    $('#ballon').on('click', function() {
+        console.log("click Ballon");
+        raise('MonCode/ButtonBallon', 1)
+    });
+
+    $('#carton').on('click', function() {
+        console.log("click Carton");
+        raise('MonCode/ButtonCarton', 1)
+    });
+
+    $('#table').on('click', function() {
+        console.log("click Table");
+        raise('MonCode/ButtonTable', 1)
+    });
+
+    $('#fauteuil').on('click', function() {
+        console.log("click Fauteuil");
+        raise('MonCode/ButtonFauteuil', 1)
+    });
+
+    $('#accueil').on('click', function() {
+        console.log("click Accueil");
+        raise('MonCode/ButtonAccueil', 1)
+    });
+
+
+});

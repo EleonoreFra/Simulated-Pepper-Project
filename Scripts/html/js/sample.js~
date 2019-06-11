@@ -1,0 +1,238 @@
+﻿$(document).ready(function () {
+    session = new QiSession();
+
+    $('#page_empty').show();
+    $('#page_1').hide();
+    $('#page_2').hide();
+    $('#page_3').hide();
+    $('#page_4').hide();
+    $('#page_5').hide();
+    $('#page_6').hide();
+    $('#page_7').hide();
+    $('#page_8').hide();
+    $('#page_9').hide();
+
+
+
+    session.service("ALMemory").done(function(ALMemory) {
+
+        ALMemory.subscriber("MonCode/Page0").done(function(subscriber) {
+
+            subscriber.signal.connect(function() {
+                $('#page_empty').show();
+                $('#page_1').hide();
+                $('#page_2').hide();
+		$('#page_3').hide();
+		$('#page_4').hide();
+		$('#page_5').hide();
+		$('#page_6').hide();
+		$('#page_7').hide();
+		$('#page_8').hide();
+		$('#page_9').hide();
+
+
+            });
+        });
+
+
+        ALMemory.subscriber("MonCode/Page1").done(function(subscriber) {
+
+            subscriber.signal.connect(function() {
+                $('#page_1').show();
+                $('#page_empty').hide();
+                $('#page_2').hide();
+		$('#page_3').hide();
+		$('#page_4').hide();
+		$('#page_5').hide();
+		$('#page_6').hide();
+		$('#page_7').hide();
+		$('#page_8').hide();
+		$('#page_9').hide();
+
+            });
+        });
+
+        ALMemory.subscriber("MonCode/Page2").done(function(subscriber) {
+
+            subscriber.signal.connect(function() {
+                $('#page_2').show();
+                $('#page_empty').hide();
+                $('#page_1').hide();
+		$('#page_3').hide();
+		$('#page_4').hide();
+		$('#page_5').hide();
+		$('#page_6').hide();
+		$('#page_7').hide();
+		$('#page_8').hide();
+		$('#page_9').hide();
+            });
+        });
+
+        ALMemory.subscriber("MonCode/Page3").done(function(subscriber) {
+
+            subscriber.signal.connect(function() {
+                $('#page_3').show();
+                $('#page_empty').hide();
+                $('#page_1').hide();
+		$('#page_2').hide();
+		$('#page_4').hide();
+		$('#page_5').hide();	
+		$('#page_6').hide();
+		$('#page_7').hide();
+		$('#page_8').hide();
+		$('#page_9').hide();
+            });
+        });
+
+
+        ALMemory.subscriber("MonCode/Page4").done(function(subscriber) {
+
+            subscriber.signal.connect(function() {
+                $('#page_4').show();
+                $('#page_empty').hide();
+                $('#page_1').hide();
+		$('#page_2').hide();
+		$('#page_3').hide();
+		$('#page_5').hide();	
+		$('#page_6').hide();
+		$('#page_7').hide();
+		$('#page_8').hide();
+		$('#page_9').hide();
+            });
+        });
+
+        ALMemory.subscriber("MonCode/Page5").done(function(subscriber) {
+
+            subscriber.signal.connect(function() {
+                $('#page_5').show();
+                $('#page_empty').hide();
+                $('#page_1').hide();
+		$('#page_2').hide();
+		$('#page_3').hide();
+		$('#page_4').hide();
+		$('#page_6').hide();
+		$('#page_7').hide();
+		$('#page_8').hide();	
+		$('#page_9').hide();
+            });
+        });
+
+
+        ALMemory.subscriber("MonCode/Page6").done(function(subscriber) {
+
+            subscriber.signal.connect(function() {
+                $('#page_6').show();
+                $('#page_empty').hide();
+                $('#page_1').hide();
+		$('#page_2').hide();
+		$('#page_3').hide();
+		$('#page_4').hide();
+		$('#page_5').hide();
+		$('#page_7').hide();
+		$('#page_8').hide();	
+		$('#page_9').hide();
+            });
+        });
+
+
+        ALMemory.subscriber("MonCode/Page7").done(function(subscriber) {
+
+            subscriber.signal.connect(function() {
+                $('#page_7').show();
+                $('#page_empty').hide();
+                $('#page_1').hide();
+		$('#page_2').hide();
+		$('#page_3').hide();
+		$('#page_4').hide();
+		$('#page_6').hide();
+		$('#page_5').hide();
+		$('#page_8').hide();
+		$('#page_9').hide();	
+            });
+        });
+
+
+        ALMemory.subscriber("MonCode/Page8").done(function(subscriber) {
+
+            subscriber.signal.connect(function() {
+                $('#page_8').show();
+                $('#page_empty').hide();
+                $('#page_1').hide();
+		$('#page_2').hide();
+		$('#page_3').hide();
+		$('#page_4').hide();
+		$('#page_5').hide();
+		$('#page_6').hide();
+		$('#page_7').hide();	
+		$('#page_9').hide();
+            });
+        });
+
+
+        ALMemory.subscriber("MonCode/Page9").done(function(subscriber) {
+
+            subscriber.signal.connect(function() {
+                $('#page_9').show();
+                $('#page_empty').hide();
+                $('#page_1').hide();
+		$('#page_2').hide();
+		$('#page_3').hide();
+		$('#page_4').hide();
+		$('#page_5').hide();
+		$('#page_6').hide();
+		$('#page_7').hide();
+		$('#page_8').hide();	
+            });
+        });
+
+
+    });
+
+    function raise(event, value) {
+        session.service("ALMemory").done(function(ALMemory) {
+            ALMemory.raiseEvent(event, value);
+        });
+    }
+
+	$('#footer_start1').on('click', function() {
+        console.log("click Start1");
+        raise('MonCode/Start1', 1)
+    });
+
+	$('#footer_start2').on('click', function() {
+        console.log("click Start2");
+        raise('MonCode/Start2', 1)
+    });
+
+    $('#page_1_1').on('click', function() {
+        console.log("click 3");
+        raise('MonCode/Button3', 1)
+    });
+
+    $('#page_1_2').on('click', function() {
+        console.log("click 4");
+        raise('MonCode/Button4', 1)
+    });
+
+    $('#page_1_3').on('click', function() {
+        console.log("click 5");
+        raise('MonCode/Button5', 1)
+    });
+
+    $('#eti').on('click', function() {
+        console.log("click ETI");
+        raise('MonCode/ButtonETI', 1)
+    });
+
+    $('#cgp').on('click', function() {
+        console.log("click CGP");
+        raise('MonCode/ButtonCGP', 1)
+    });
+
+    $('.accueil').on('click', function() {
+        console.log("click accueil");
+        raise('MonCode/ButtonAccueil', 1)
+    });
+
+
+});

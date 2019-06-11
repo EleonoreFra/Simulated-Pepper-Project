@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Simulation Pepper Project</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="viewport"
+          content="initial-scale = 1.34,
+                   minimum-scale = 1.34,
+                   maximum-scale = 1.34" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/buttons.css">
+
+    <script src="jquery-1.11.2.min.js"></script>
+    <script src="js/monCode.js"></script>
+    <script src="/libs/qimessaging/1.0/qimessaging.js"></script>
+</head>
+
+  <body>
+
+    <div id="header">
+      <img src="img/logo.png" id="logo_cpe">
+    </div>
+
+    <div id="page_accueil">
+      <h1 id="main_title">Bonjour ! Clique pour que je commence à ranger ta chambre, ou bien dis "Range ma chambre"</h1>
+      <button type="button" class="btn btn-outline-primary" id="ranger"><h1>Range ma chambre</h1></button>
+    </div>
+    
+    <div id="page_objet">
+      <h1 id="title_objet">Quel objet veux-tu que je range ?</h1>
+
+      <div id="button_peluche">
+	<button type="button" class="btn btn-outline-primary" id="peluche"><h1>Peluche</h1></button>
+	<img src="img/teddybear.png" class="img">
+      </div>
+
+      <div id="button_ballon">
+        <button type="button" class="btn btn-outline-primary" id="ballon"><h1>Ballon</h1></button>
+        <img src="img/ball.png" class="img">
+      </div>
+
+      <div id="button_oiseau">
+        <button type="button" class="btn btn-outline-primary" id="oiseau"><h1>Oiseau</h1></button>
+        <img src="img/bird.png" class="img">
+      </div>
+    </div>
+
+    <div id="page_rangement">
+      <h1 id="title_rangement">Où dois-je le ranger ?</h1>
+      <div id="button_carton">
+        <button type="button" class="btn btn-outline-primary" id="carton"><h1>Carton</h1></button></br>
+        <img src="img/carton.png" class="img">
+      </div>
+
+      <div id="button_table">
+        <button type="button" class="btn btn-outline-primary" id="table"><h1>Table de nuit</h1></button></br>
+        <img src="img/table.png" class="img">
+      </div>
+
+      <div id="button_fauteuil">
+        <button type="button" class="btn btn-outline-primary" id="fauteuil"><h1>Fauteuil</h1></button></br> 
+        <img src="img/fauteuil.png" class="img">
+      </div>
+    </div>
+
+    <div id="page_en_cours">
+      <h1 id="title_en_cours">Je fais ça !</h1>
+      <button type="button" class="btn btn-outline-primary" id="new_object"><h1>Ranger un nouvel objet</h1></button></br>
+    </div>
+
+</body>
